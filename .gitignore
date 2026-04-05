@@ -41,6 +41,5 @@ logs/app.*.log
 logs/app.*.log.gz
 !logs/audit.log
 
-gUgmor-humzod-1zissa
 ### Local environment / secrets ###
 database.properties
