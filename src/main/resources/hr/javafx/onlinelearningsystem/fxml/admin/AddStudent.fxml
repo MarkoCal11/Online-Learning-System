@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="hr.javafx.onlinelearningsystem.controller.admin.AddStudentController"
+      spacing="20.0" styleClass="card" stylesheets="@../../styles.css"
+      prefWidth="500.0" prefHeight="520.0">
+
+    <padding>
+        <Insets top="30.0" right="30.0" bottom="30.0" left="30.0"/>
+    </padding>
+
+    <VBox spacing="8.0">
+        <Label text="Add New Student" styleClass="pageTitle-label"/>
+        <Label text="Enter student information to create a new account" styleClass="stat-label"/>
+    </VBox>
+
+    <Separator/>
+
+    <GridPane hgap="15.0" vgap="18.0" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120.0" prefWidth="120.0"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Username:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="usernameField" promptText="Enter username" styleClass="login-field"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Password:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="passwordField" promptText="Enter password" styleClass="login-field"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="First Name:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="firstNameField" promptText="Enter first name" styleClass="login-field"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Last Name:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="lastNameField" promptText="Enter last name" styleClass="login-field"
+                   GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="JMBAG:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField fx:id="jmbagField" promptText="Enter JMBAG" styleClass="login-field"
+                   GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Email Address:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <TextField fx:id="emailField" promptText="student@ols.edu" styleClass="login-field"
+                   GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    </GridPane>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Separator/>
+
+    <HBox spacing="12.0" alignment="CENTER_RIGHT">
+        <Button fx:id="closeButton" text="Cancel" onAction="#handleClose" styleClass="secondary-button" prefWidth="100.0"/>
+        <Button text="Save Student" onAction="#handleSave" styleClass="primary-button" prefWidth="130.0" defaultButton="true"/>
+    </HBox>
+</VBox>

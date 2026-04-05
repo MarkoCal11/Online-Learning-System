@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="560.0" prefWidth="520.0" spacing="16.0" styleClass="card" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.javafx.onlinelearningsystem.controller.admin.ManageEnrollmentsController">
+
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <Label fx:id="courseTitleLabel" styleClass="course-title" />
+
+    <Separator />
+
+    <VBox spacing="8.0">
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label styleClass="subsection-label" text="Enrolled Students" HBox.hgrow="ALWAYS" />
+        </HBox>
+
+        <TableView fx:id="enrolledStudentsList" prefHeight="280.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Full Name" />
+                <TableColumn fx:id="usernameColumn" prefWidth="128.0" text="Username" />
+                <TableColumn fx:id="jmbagColumn" prefWidth="130.0" text="JMBAG" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <HBox spacing="10.0">
+        <Button onAction="#handleAddStudent" styleClass="primary-button" text="+ Add Student" />
+        <Button onAction="#handleRemoveStudent" styleClass="danger-button" text="Remove Selected" />
+        <HBox HBox.hgrow="ALWAYS" />
+        <Button fx:id="closeButton" onAction="#handleClose" styleClass="secondary-button" text="Close" />
+    </HBox>
+
+</VBox>

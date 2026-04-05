@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="hr.javafx.onlinelearningsystem.controller.teacher.EditLessonController"
+      spacing="20.0" styleClass="card" stylesheets="@../../styles.css"
+      prefWidth="500.0" prefHeight="520.0">
+
+    <padding>
+        <Insets top="30.0" right="30.0" bottom="30.0" left="30.0"/>
+    </padding>
+
+    <VBox spacing="8.0">
+        <Label text="Edit Lesson" styleClass="pageTitle-label"/>
+        <Label text="Edit lesson title and content" styleClass="stat-label"/>
+    </VBox>
+
+    <Separator/>
+
+    <GridPane hgap="15.0" vgap="18.0" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120.0" prefWidth="120.0"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Title:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="titleField" promptText="Enter title" styleClass="login-field"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Content:" styleClass="login-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextArea fx:id="contentArea" promptText="Enter lesson content" styleClass="text-area"
+                  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    </GridPane>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Separator/>
+
+    <HBox spacing="12.0" alignment="CENTER_RIGHT">
+        <Button fx:id="closeButton" text="Cancel" onAction="#handleClose" styleClass="secondary-button" prefWidth="100.0"/>
+        <Button text="Save Lesson" onAction="#handleSave" styleClass="primary-button" prefWidth="130.0" defaultButton="true"/>
+    </HBox>
+</VBox>
