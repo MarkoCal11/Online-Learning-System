@@ -4,6 +4,14 @@ target/
 !**/src/test/**/target/
 .kotlin
 
+# Compiled Java
+*.class
+
+
+# H2 database files
+*.mv.db
+*.trace.db
+
 ### IntelliJ IDEA ###
 .idea/
 *.iws
