@@ -18,12 +18,14 @@ Requirements: JDK 25 (or change pom.xml to 21)
 
 ```sh
 ./mvnw clean javafx:run
+```
 
 ### macOS note
 If `./mvnw` is blocked, run:
 ```sh
 xattr -dr com.apple.quarantine .
 chmod +x mvnw
+```
 
 
 ## Demo login
