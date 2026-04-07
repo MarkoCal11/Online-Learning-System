@@ -12,3 +12,9 @@ A desktop-based online learning system built with Java and JavaFX, designed to s
 - JavaFX
 - Maven
 - H2 database
+
+## Run
+Requirements: JDK 25 (or change pom.xml to 21)
+
+```sh
+./mvnw clean javafx:run

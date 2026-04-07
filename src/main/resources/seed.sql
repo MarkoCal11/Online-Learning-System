@@ -1,0 +1,29 @@
+-- Teacher
+INSERT INTO TEACHER (USERNAME, ROLE, FIRST_NAME, LAST_NAME, EMAIL, DATE_ADDED)
+VALUES ('teacher1', 'TEACHER', 'Tina', 'Teacher', 'teacher1@ols.edu', CURRENT_DATE());
+
+-- Student
+INSERT INTO STUDENT (USERNAME, ROLE, FIRST_NAME, LAST_NAME, EMAIL, DATE_ADDED, JMBAG)
+VALUES ('student1', 'STUDENT', 'Sam', 'Student', 'student1@ols.edu', CURRENT_DATE(), '0000000001');
+
+-- Course (assign teacher)
+INSERT INTO COURSE (TITLE, DESCRIPTION, ECTS, TEACHER_ID)
+VALUES ('Intro to Java', 'Basics of Java and OOP', 5, (SELECT ID FROM TEACHER WHERE USERNAME='teacher1'));
+
+-- Enrolment
+INSERT INTO ENROLMENT (STUDENT_ID, COURSE_ID, ENROLMENT_DATE, STATUS, FINAL_GRADE)
+VALUES (
+           (SELECT ID FROM STUDENT WHERE USERNAME='student1'),
+           (SELECT ID FROM COURSE WHERE TITLE='Intro to Java'),
+           CURRENT_DATE(),
+           'ACTIVE',
+           NULL
+       );
+
+-- Lesson
+INSERT INTO LESSON (TITLE, CONTENT, COURSE_ID)
+VALUES ('Lesson 1', 'Welcome to the course!', (SELECT ID FROM COURSE WHERE TITLE='Intro to Java'));
+
+-- Quiz
+INSERT INTO QUIZ (TITLE, DATE, COURSE_ID, READY_TO_TAKE)
+VALUES ('Quiz 1', NULL, (SELECT ID FROM COURSE WHERE TITLE='Intro to Java'), FALSE);
